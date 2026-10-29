@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --test test.spec.js"
+    "test": "node --test index.spec.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "peerDependencies": {
     "express": "^4.17.1"
-  }, 
+  },
+  "devDependencies": {
+    "express": "^4.22.3"
+  },
   "repository": {
     "url": "https://github.com/AsheTM/express-routes-group.git"
   }
