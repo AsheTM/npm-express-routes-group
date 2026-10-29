@@ -1,7 +1,12 @@
-var express = require('express');
+const express = require('express');
 
-express.Router.group = function(arg1, arg2) {
-    var fn, path;
+express.Router.group = group;
+
+express.application.group = group;
+
+function group(arg1, arg2) {
+    let fn, path;
+    
     if (arg2 === undefined) {
         path = "/";
         fn = arg1;
@@ -9,23 +14,11 @@ express.Router.group = function(arg1, arg2) {
         path = arg1;
         fn = arg2;
     }
-    var router = express.Router();
-    fn(router);
-    this.use(path, router);
-    return router;
-}
 
-express.application.group = function(arg1, arg2) {
-    var fn, path;
-    if (arg2 === undefined) {
-        path = "/";
-        fn = arg1;
-    } else {
-        path = arg1;
-        fn = arg2;
-    }
-    var router = express.Router();
+    let router = express.Router();
+
     fn(router);
     this.use(path, router);
+
     return this;
-};
+}
