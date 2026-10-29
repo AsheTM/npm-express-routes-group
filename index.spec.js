@@ -27,7 +27,7 @@ describe('express-routes-group', () => {
 
     // The call throws and nothing gets mounted.
     function assertRejected(call) {
-        assert.throws(call);
+        assert.throws(call, TypeError);
         assert.equal(parent.use.mock.callCount(), 0);
     }
 
@@ -216,7 +216,7 @@ describe('express-routes-group', () => {
         });
 
         it('group(undefined, path, cb) should throw', () => {
-            assert.throws(() => group(undefined, '/users', () => {}));
+            assert.throws(() => group(undefined, '/users', () => {}), TypeError);
         });
     });
 });
