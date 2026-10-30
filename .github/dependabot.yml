@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    target-branch: develop
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+    assignees:
+      - AsheTM
+    commit-message:
+      prefix: chore
+      include: scope
