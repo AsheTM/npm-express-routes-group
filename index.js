@@ -1,6 +1,7 @@
 const express = require('express');
 
-express.Router.group = group;
+express.Router.group = group;             // Express 4: routers inherit from Router
+express.Router.prototype.group = group;   // Express 5: routers inherit from Router.prototype
 
 express.application.group = group;
 
