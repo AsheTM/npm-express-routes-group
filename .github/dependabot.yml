@@ -12,3 +12,7 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    ignore:
+      # The express dev dependency tests Express 4; express5 covers Express 5.
+      - dependency-name: express
+        update-types: ["version-update:semver-major"]
