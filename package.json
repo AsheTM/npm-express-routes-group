@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --test index.spec.js"
+    "test": "npm run test:express4 && npm run test:express5",
+    "test:express4": "node --test index.spec.js",
+    "test:express5": "node --require ./test/use-express5.js --test index.spec.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1 || ^5.0.0"
   },
   "devDependencies": {
-    "express": "^4.22.3"
+    "express": "^4.22.3",
+    "express5": "npm:express@^5.3.0"
   },
   "repository": {
     "url": "https://github.com/AsheTM/express-routes-group.git"
